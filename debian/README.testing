@@ -1,0 +1,5 @@
+You can test festival by installing festvox-kallpc16k, starting festival, and
+then type:
+
+festival> (SayText "Hello")
+#<Utterance 0x7f05f9589f90>

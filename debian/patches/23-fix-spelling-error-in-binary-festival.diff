@@ -1,0 +1,61 @@
+Description: fix lintian spelling-error-in-binary usr/bin/festival
+Forwarded: yes
+Author: xiao sheng wen <atzlinux@sina.com>
+
+---
+Last-Update: 2021-10-19
+
+--- festival-2.5.0.orig/src/arch/festival/features.cc
++++ festival-2.5.0/src/arch/festival/features.cc
+@@ -436,7 +436,7 @@ void festival_features_init(void)
+     "ANY.lisp_*\n\
+   Apply Lisp function named after lisp_.  The function is called with\n\
+   an stream item.  It must return an atomic value.\n\
+-  This method may be inefficient and is primarily desgined to allow\n\
++  This method may be inefficient and is primarily designed to allow\n\
+   quick prototyping of new feature functions.");
+ 
+     festival_def_ff_pref(
+--- festival-2.5.0.orig/src/arch/festival/web.cc
++++ festival-2.5.0/src/arch/festival/web.cc
+@@ -95,7 +95,7 @@ LISP lisp_get_url(LISP url,LISP filename
+ 	    cerr << "url_get: malformed url" << endl;
+ 	    festival_error();
+ 	}
+-	host = us.get().string();  // upto next /
++	host = us.get().string();  // up to next /
+ 	if (us.peek() == ":")      // a port is specified
+ 	{
+ 	    us.get();
+--- festival-2.5.0.orig/src/modules/Text/token.cc
++++ festival-2.5.0/src/modules/Text/token.cc
+@@ -663,7 +663,7 @@ void festival_token_init(void)
+   by letter to sound rules.");
+     festival_def_utt_module("Token_POS",FT_Token_POS_Utt,
+     "(Token_POS UTT)\n\
+-  Assign feature token_pos to tokens thats match CART trees in the\n\
++  Assign feature token_pos to tokens that match CART trees in the\n\
+   variable token_pos_cart_trees.  These are used for gross level pos\n\
+   such as identifying how numbers should be pronunced.");
+     init_subr_2("builtin_english_token_to_words",l_word_it,
+--- festival-2.5.0.orig/src/modules/Text/xxml.cc
++++ festival-2.5.0/src/modules/Text/xxml.cc
+@@ -175,7 +175,7 @@ static LISP xxml_get_attribute(const EST
+     }
+     else
+     {
+-	cerr << "XXML: unknow attribute type " << remainder << endl;
++	cerr << "XXML: unknown attribute type " << remainder << endl;
+ 	festival_error();
+     }
+ 
+--- festival-2.5.0.orig/src/modules/clunits/clunits.cc
++++ festival-2.5.0/src/modules/clunits/clunits.cc
+@@ -809,6 +809,6 @@ void festival_clunits_init(void)
+ 
+     init_subr_2("cl_mapping", l_cl_mapping,
+       "(cl_mapping UTT PARAMS)\n\
+-  Impose prosody upto some percentage, and not absolutely.");
++  Impose prosody up to some percentage, and not absolutely.");
+ 
+ }

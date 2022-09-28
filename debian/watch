@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/-beta/~beta/;s/-release//" \
+http://www.festvox.org/packed/festival/([\d.]*)/festival-(.*)@ARCHIVE_EXT@

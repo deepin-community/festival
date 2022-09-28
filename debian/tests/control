@@ -1,0 +1,2 @@
+Depends: festival, festvox-kallpc16k
+Test-Command: echo "Hello, world!" | text2wave > $AUTOPKGTEST_TMP/output.wav && diff $AUTOPKGTEST_TMP/output.wav debian/tests/output.wav
