@@ -1,2 +1,2 @@
 # Yes, that is actually expected
-national-encoding usr/share/festival/token.scm
+national-encoding [usr/share/festival/token.scm]

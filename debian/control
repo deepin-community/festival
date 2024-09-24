@@ -14,7 +14,7 @@ Build-Depends: debhelper-compat (= 12), faketime,
                texinfo,
                texlive-latex-base,
                quilt
-Standards-Version: 4.5.1
+Standards-Version: 4.6.1
 Homepage: https://www.cstr.ed.ac.uk/projects/festival/
 Vcs-Git: https://salsa.debian.org/tts-team/festival.git
 Vcs-Browser: https://salsa.debian.org/tts-team/festival
@@ -22,6 +22,7 @@ Rules-Requires-Root: no
 
 Package: festival
 Architecture: any
+Multi-Arch: foreign
 Depends: ${shlibs:Depends}, ${misc:Depends},
          adduser,
          alsa-utils [linux-any],
@@ -49,8 +50,10 @@ Description: Development kit for the Festival speech synthesis system
 
 Package: festival-doc
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}, doc-base
+Breaks: festival (<< 1:2.5.0-9)
+Replaces: festival (<< 1:2.5.0-9)
 Section: doc
 Description: Documentation for Festival
- This package contains the HTML and Postscript versions of the
- documentation for Festival.
+ This package contains the documentation for Festival.

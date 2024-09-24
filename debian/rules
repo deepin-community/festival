@@ -7,12 +7,7 @@ ifneq ($(SOURCE_DATE_EPOCH),)
 export FORCE_SOURCE_DATE=1
 
 # Also force "TeX output" string in dvi file, thus %DVIPSSource in the ps file.
-FAKETIME = TZ=UTC faketime @$(SOURCE_DATE_EPOCH)
-endif
-
-ifeq ($(origin CC),default)
-CC := $(DEB_HOST_GNU_TYPE)-gcc
-CXX := $(DEB_HOST_GNU_TYPE)-g++
+FAKETIME = TZ=UTC faketime "$(shell TZ=UTC date +"%Y-%m-%d %T" --date=@$(SOURCE_DATE_EPOCH))"
 endif
 
 override_dh_auto_configure:
@@ -21,8 +16,10 @@ override_dh_auto_configure:
 override_dh_auto_test:
 #Upstream states test is only for their local development not a functional test
 
-override_dh_auto_build:
-	$(MAKE) CC='$(CC)' CXX='$(CXX)'
+override_dh_auto_build-arch:
+	dh_auto_build --no-parallel --buildsystem=makefile
+
+override_dh_auto_build-indep: override_dh_auto_build-arch
 	cd doc && $(FAKETIME) $(MAKE) festival.info festival.html festival.ps
 
 override_dh_auto_clean:
