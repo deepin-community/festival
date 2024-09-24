@@ -1,3 +1,30 @@
+festival (1:2.5.0-10) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Update lintian override info format in d/festival.lintian-overrides on line
+    2.
+  * Update standards version to 4.6.1, no changes needed.
+
+  [ Hilmar Preusse ]
+  * patches/texinfo70: Fix build against texinfo 7.0.x.
+
+ -- Samuel Thibault <sthibault@debian.org>  Fri, 14 Jul 2023 02:57:28 +0200
+
+festival (1:2.5.0-9) unstable; urgency=medium
+
+  [ Samuel Thibault ]
+  * rules: Fix date format passed to faketime.
+  * control: Bump Standards-Version to 4.6.0 (no change)
+  * control: Make festival Multi-Arch: foreign.
+  * festival.info: Move info to festival-doc.info.
+  * control: Make festival-doc Break+Replace festival accordingly.
+  * rules: Separate out building doc into override_dh_auto_build-indep.
+
+  [ Nilesh Patra ]
+  * rules: Replace $(MAKE) with dh_auto_build call (Closes: Bug#1022239)
+
+ -- Samuel Thibault <sthibault@debian.org>  Sun, 23 Oct 2022 23:12:07 +0200
+
 festival (1:2.5.0-8) unstable; urgency=medium
 
   [ Debian Janitor ]
